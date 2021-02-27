@@ -7,7 +7,7 @@ const logger = require('morgan');
 const mongoose=require("mongoose")
 const { mongodbUrl}=require("./config/config")
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/IndexRouter');
 const authRouter = require('./routes/AuthRouter');
 const todoRouter=require("./routes/ToDoRouter");
 const adminRouter=require("./routes/AdminRouter");

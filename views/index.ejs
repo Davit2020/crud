@@ -17,5 +17,18 @@
       </li>    
     </ul>
   </div>  
-</nav>
+</nav> 
+ <% for(let article of articles){ %>
+
+  <article>
+     
+      <h1><%= article['title'] %> </h1>
+      <p><%= article['description'] %> </p>
+      <img src="/images/<%= article['image'] %>" width="400" height="400">
+      <p><%= article['content'] %> </p>
+  </article>    
+
+<% } %>
+
+
 <%- include("components/footer.ejs") -%>
