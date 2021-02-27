@@ -41,14 +41,14 @@ class AuthController{
               return res.render("login",{message:`Email or password is incorrect`})
           }
           console.log(req.body.password)
-console.log(user)
+
           let passwordOk=await user.comparePassword(req.body.password)
           
           if(!passwordOk){
             return res.render("login",{message:`Email or password is incorrect`})
           }
            req.session.user=user
-           res.redirect("/todo")
+           res.redirect("/admin")
 
          }catch(err){
              console.log(err)
