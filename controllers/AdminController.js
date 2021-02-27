@@ -28,6 +28,12 @@ class AdminController{
 
 
     }
+    async deleteArticle(req,res){
+  
+        let Articles=await Article.deleteOne({_id:req.params.id})
+        res.redirect("/admin/articles")
+
+    }
 
 
 }

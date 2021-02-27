@@ -8,7 +8,7 @@
                     <a href="/admin/articles/articleCreate" class="btn btn-success pull-right">Add New Article</a>
                 </div>
            
-                       <table class='table table-bordered table-striped'>";
+                       <table class='table table-bordered table-striped' >
                            <thead>
                                <tr>
                                     <th>#</th>
@@ -32,7 +32,7 @@
                                     <td>
                                        <a href='#' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
                                       <a href='#' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
-                                      <button class="delete" id='#'><span class='glyphicon glyphicon-trash'></span></button>
+                                      <a href='/admin/articles/delete/<%= article['id'] %>' title='Update Record' data-toggle='tooltip'><button class="deleteButton" id="<%= article['id'] %>" >delete</button></a>
                                    </td>
                                 </tr>
 
@@ -40,8 +40,8 @@
 
                              <% } %>
                                  
-                         
-                           </tbody>; 
+                         <script src="/javascripts/admin.js"></script>
+                           </tbody>
 
 
 

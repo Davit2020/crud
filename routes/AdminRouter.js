@@ -1,7 +1,7 @@
 const express = require('express');
 const path=require("path")
 const multer=require("multer")
-const { AdminView, getAllArticles,createArticleView,  addNewArticle} =require("../controllers/AdminController")
+const { AdminView, getAllArticles,createArticleView,  addNewArticle,deleteArticle} =require("../controllers/AdminController")
 const router = express.Router();
 
 
@@ -29,6 +29,7 @@ router.get("/articles/articleCreate", createArticleView)
 
 router.post("/articles/articleCreate",upload.single("articleImg"), addNewArticle)
 
+router.get("/articles/delete/:id", deleteArticle)
 
 
 module.exports = router;
