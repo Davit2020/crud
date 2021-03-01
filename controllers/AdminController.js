@@ -34,6 +34,51 @@ class AdminController{
         res.redirect("/admin/articles")
 
     }
+    async editpage(req,res){
+        let Articl=await Article.findOne({_id:req.params.id})
+    
+        res.render("EditArticle",{Articl:Articl})
+
+    }
+
+    async editArticle(req,res,){
+   
+            if (req.file==undefined) {
+            
+                 Article.findOne(
+                    {_id:req.params.id},(err,post)=>{
+                        if(err){
+                            console.log(err);
+                        }else{
+                            
+                            post.title=req.body.title;
+                            post.description=req.body.description;
+                            post.content=req.body.content;
+                            post.save()
+                            res.redirect("/admin/articles")
+                        }
+                    }
+                );
+                console.log('dd')
+            }else{
+                Article.findOne(
+                    {_id:req.params.id},(err,post)=>{
+                        if(err){
+                            console.log(err);
+                        }else{
+                            console.log(post)
+                            post.title=req.body.title;
+                            post.description=req.body.description;
+                            post.content=req.body.content;
+                            post.image=req.file.filename
+                            post.save()
+                            res.redirect("/admin/articles")
+                        }
+                    }
+                );
+            }
+           
+    }
 
 
 }

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session=require("express-session")
 const logger = require('morgan');
+const bodyParser = require('body-parser')
 const mongoose=require("mongoose")
 const { mongodbUrl}=require("./config/config")
 
