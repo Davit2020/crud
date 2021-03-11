@@ -1,9 +1,9 @@
-const {Article}=require("../models/ArticleModel")
+const { UserModel } = require("../models/UserModel")
 
 class IndexController{
-    async home(req,res){
-        let articles=await Article.find()
-        res.render("index",{articles:articles})
+  home(req,res){
+       
+        res.render("index")
     }
 }
 

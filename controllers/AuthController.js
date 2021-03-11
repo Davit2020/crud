@@ -8,7 +8,7 @@ class AuthController{
     }
     async  registerNewUser(req,res){
       try{  
-        console.log("->",req.body)
+       
         let email=req.body.email
         let user= await UserModel.findOne({email:email})
         if(user){
